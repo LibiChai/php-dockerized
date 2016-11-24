@@ -20,11 +20,16 @@ mysql:
   image: mysql
   ports:
     - "3306:3306"
+  volumes:
+    - ./data/mysql:/var/lib/mysql
   environment:
     MYSQL_ROOT_PASSWORD: password
 
 mongo:
   image: mongo
+  volumes:
+    - ./data/mongo/dbconfig:/data/dbconfig
+    - ./data/mongo/db:/data/db
   ports:
     - "27017:27017"
 
@@ -35,6 +40,8 @@ memcached:
 
 redis:
   image: redis
+  volumes:
+    - ./data:/data/redis
   ports:
     - "6379:6379"
 
