@@ -28,7 +28,7 @@ mysql:
 mongo:
   image: mongo
   volumes:
-    - ./data/mongo/dbconfig:/data/dbconfig
+    - ./data/mongo/configdb:/data/configdb
     - ./data/mongo/db:/data/db
   ports:
     - "27017:27017"
@@ -41,7 +41,7 @@ memcached:
 redis:
   image: redis
   volumes:
-    - ./data:/data/redis
+    - ./data/redis:/data
   ports:
     - "6379:6379"
 
